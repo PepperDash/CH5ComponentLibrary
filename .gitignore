@@ -15,3 +15,4 @@ test-report.xml
 mochawesome-report
 .nyc_output
 .vscode/settings.json
+*.tgz
