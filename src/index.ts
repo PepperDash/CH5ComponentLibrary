@@ -4,11 +4,14 @@
 // or natural, without the express written consent of Crestron Electronics.
 // Use of this source code is subject to the terms of the Crestron Software License Agreement
 // under which you licensed this source code.
-import { bridgeReceiveBooleanFromNative, bridgeReceiveIntegerFromNative, bridgeReceiveObjectFromNative, bridgeReceiveStringFromNative } from './ch5-core/ch5-signal-bridge-receive';
 
-window['bridgeReceiveIntegerFromNative'] = bridgeReceiveIntegerFromNative;
-window['bridgeReceiveBooleanFromNative'] = bridgeReceiveBooleanFromNative;
-window['bridgeReceiveStringFromNative'] = bridgeReceiveStringFromNative;
-window['bridgeReceiveObjectFromNative'] = bridgeReceiveObjectFromNative;
+import * as CrComLib from './ch5-core/index';
 
-export * as CrComLib from './ch5-core/index';
+if (CrComLib.isCrestronTouchscreen()) {
+  window.bridgeReceiveIntegerFromNative = CrComLib.bridgeReceiveIntegerFromNative;
+  window.bridgeReceiveBooleanFromNative = CrComLib.bridgeReceiveBooleanFromNative;
+  window.bridgeReceiveStringFromNative = CrComLib.bridgeReceiveStringFromNative;
+  window.bridgeReceiveObjectFromNative = CrComLib.bridgeReceiveObjectFromNative;
+}
+
+export { CrComLib };

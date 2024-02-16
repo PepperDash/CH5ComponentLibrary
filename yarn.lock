@@ -341,14 +341,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@raghavendradabbir/mycolorpicker@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@raghavendradabbir/mycolorpicker/-/mycolorpicker-1.0.0.tgz"
-  integrity sha512-x8hUsj3Enj+LF9mv6bI0twZO7iGud3kzhLzRNBHjUx4/QtKk/EjDEaQwlhVfC/JJxaedPtuOZn1XgcixlqUzow==
-  dependencies:
-    dragjs "^0.8.0"
-    onecolor "^3.0.5"
-
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.npmjs.org/@tootallnate/once/-/once-1.1.2.tgz"
@@ -392,11 +384,6 @@
   dependencies:
     "@types/jsonfile" "*"
     "@types/node" "*"
-
-"@types/hammerjs@^2.0.40":
-  version "2.0.45"
-  resolved "https://registry.npmjs.org/@types/hammerjs/-/hammerjs-2.0.45.tgz"
-  integrity sha512-qkcUlZmX6c4J8q45taBKTL3p+LbITgyx7qhlPYOdOHZB7B31K0mXbP5YA7i7SgDeEGuI9MnumiKPEMrxg8j3KQ==
 
 "@types/i18next@^13.0.0":
   version "13.0.0"
@@ -456,13 +443,6 @@
   integrity sha512-gKb0enTmRCzXSSUJDq6/sPcqrfCv2mkkG6Jt/clpn5eiCbKTY+SgZUxo+p8ZKMof5dCp9vHQUAB7wOUTod22wQ==
   dependencies:
     undici-types "~5.26.4"
-
-"@types/nouislider@^15.0.0":
-  version "15.0.0"
-  resolved "https://registry.npmjs.org/@types/nouislider/-/nouislider-15.0.0.tgz"
-  integrity sha512-CgBRRaaoR09F+yIp3y222atrs8+e2fDv0sFJmhhgJP9fvKfoZsKHX10oBMe/Y3toZ4obIY+CMirfGeli+aoKwg==
-  dependencies:
-    nouislider "*"
 
 "@types/parse5@^6.0.3":
   version "6.0.3"
@@ -1780,11 +1760,6 @@ dotenv@^8.2.0:
   resolved "https://registry.npmjs.org/dotenv/-/dotenv-8.6.0.tgz"
   integrity sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
 
-dragjs@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.npmjs.org/dragjs/-/dragjs-0.8.0.tgz"
-  integrity sha512-BOwbJST6J5knOE7giEtH9JUbTQMhW+P11nXwux1z4oConRDXWX97lFql0SHzRSO8ZbBcsVCWVydKDOEgWQvMXQ==
-
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
@@ -2491,11 +2466,6 @@ growl@1.10.5:
   version "1.10.5"
   resolved "https://registry.npmjs.org/growl/-/growl-1.10.5.tgz"
   integrity sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==
-
-hammerjs@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.8.tgz"
-  integrity sha512-tSQXBXS/MWQOn/RKckawJ61vvsDpCom87JgxiYdGwHdOa0ht0vzUWDlfioofFCRU0L+6NGDt6XzbgoJvZkMeRQ==
 
 has-bigints@^1.0.1, has-bigints@^1.0.2:
   version "1.0.2"
@@ -4054,11 +4024,6 @@ normalize-range@^0.1.2:
   resolved "https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
-nouislider@*, nouislider@^15.7.1:
-  version "15.7.1"
-  resolved "https://registry.npmjs.org/nouislider/-/nouislider-15.7.1.tgz"
-  integrity sha512-5N7C1ru/i8y3dg9+Z6ilj6+m1EfabvOoaRa7ztpxBSKKRZso4vA52DGSbBJjw5XLtFr/LZ9SgGAXqyVtlVHO5w==
-
 npm-run-all@^4.1.5:
   version "4.1.5"
   resolved "https://registry.npmjs.org/npm-run-all/-/npm-run-all-4.1.5.tgz"
@@ -4185,11 +4150,6 @@ once@^1.3.0:
   integrity sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==
   dependencies:
     wrappy "1"
-
-onecolor@^3.0.5:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/onecolor/-/onecolor-3.1.0.tgz"
-  integrity sha512-YZSypViXzu3ul5LMu/m6XjJ9ol8qAy9S2VjHl5E6UlhUH1KGKWabyEJifn0Jjpw23bYDzC2ucKMPGiH5kfwSGQ==
 
 only@~0.0.2:
   version "0.0.2"
