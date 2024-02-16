@@ -19,8 +19,7 @@
     },
     "scripts": {
         "build": "tsc -p tsconfig.esm.json",
-        "lint": "tslint --project tsconfig.cjs.json",
-        "prebuild": "npm-run-all clean:*",
+        "lint": "tslint --project tsconfig.cjs.json",        
         "eslint": "eslint . --ext .ts"
     },
     "author": "Crestron",
