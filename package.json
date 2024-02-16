@@ -18,7 +18,7 @@
         }
     },
     "scripts": {
-        "compile": "tsc -p tsconfig.esm.json",
+        "build": "tsc -p tsconfig.esm.json",
         "lint": "tslint --project tsconfig.cjs.json",
         "prebuild": "npm-run-all clean:*",
         "eslint": "eslint . --ext .ts"
