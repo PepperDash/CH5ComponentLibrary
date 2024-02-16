@@ -4,7 +4,7 @@
     "description": "Crestron HTML5 (CH5) Components Library modified by PepperDash",
     "repository": {
         "type": "git",
-        "url": "https://github.com/pepperdash/CH5ComponentLibrary.git"
+        "url": "git+https://github.com/pepperdash/CH5ComponentLibrary.git"
     },
     "keywords": [
         "ch5",
@@ -17,9 +17,13 @@
             "import": "./dist/index.js"
         }
     },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
+    },
     "scripts": {
         "build": "tsc -p tsconfig.esm.json",
-        "lint": "tslint --project tsconfig.cjs.json",        
+        "lint": "tslint --project tsconfig.cjs.json",
         "eslint": "eslint . --ext .ts"
     },
     "author": "Crestron - modified by PepperDash",
