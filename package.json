@@ -12,10 +12,11 @@
     ],
     "type": "module",
     "types": "dist/index.d.ts",
-    "main": "dist/index.js",
+    "main": "dist/ch5-crcomlib-lite.js",
+    "module": "dist/ch5-crcomlib-lite.js",
     "exports": {
         ".": {
-            "import": "./dist/index.js"
+            "import": "./dist/ch5-crcomlib-lite.js"
         }
     },
     "publishConfig": {
