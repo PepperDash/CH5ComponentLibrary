@@ -17,3 +17,5 @@ if (CrComLib.isCrestronTouchscreen()) {
 window.CrComLib = CrComLib;
 
 export { CrComLib };
+  
+export * from './ch5-emulator/index';
