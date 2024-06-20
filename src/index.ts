@@ -14,4 +14,6 @@ if (CrComLib.isCrestronTouchscreen()) {
   window.bridgeReceiveObjectFromNative = CrComLib.bridgeReceiveObjectFromNative;
 }
 
+window.CrComLib = CrComLib;
+
 export { CrComLib };
