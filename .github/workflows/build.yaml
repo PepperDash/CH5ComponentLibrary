@@ -4,6 +4,7 @@ on: push
 
 permissions:
   contents: write
+  id-token: write
   issues: write
   pull-requests: write
 
@@ -20,6 +21,7 @@ jobs:
         with:
           node-version: 24
           cache: npm
+          registry-url: https://registry.npmjs.org
       - name: compare upstream release baseline
         run: |
           git fetch --no-tags --depth=1 https://github.com/Crestron/CH5ComponentLibrary.git master:refs/remotes/upstream/master
@@ -62,7 +64,6 @@ jobs:
           --package=@semantic-release/github \
           -- semantic-release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+          NPM_CONFIG_PROVENANCE: "true"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
