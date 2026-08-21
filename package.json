@@ -94,7 +94,7 @@
         "cross-env": "^7.0.3", 
         "dotenv-webpack": "^7.1.0", 
         "eslint": "^8.57.1", 
-        "jsdom": "^16.7.0", 
+        "jsdom": "^30.0.1", 
         "jsdom-global": "3.0.2", 
         "mocha": "^11.7.4", 
         "mochawesome": "^7.1.3", 
