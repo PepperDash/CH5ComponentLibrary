@@ -21,7 +21,6 @@ jobs:
         with:
           node-version: 24
           cache: npm
-          registry-url: https://registry.npmjs.org
       - name: compare upstream release baseline
         run: |
           git fetch --no-tags --depth=1 https://github.com/Crestron/CH5ComponentLibrary.git master:refs/remotes/upstream/master
