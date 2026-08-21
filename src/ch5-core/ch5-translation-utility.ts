@@ -33,12 +33,12 @@ export class Ch5TranslationUtility {
 	}
 
 	public valuesToTranslation(valueToTranslation: string) {
-		const patternIdentifier = new RegExp("(\\" + this.translatorBeginKey + ")([a-zA-Z0-9\\.]+)\\w+(\\" + this.translatorEndKey + ")", "g");
+		const patternIdentifier = new RegExp(`^${this.translatorBeginKey}[a-zA-Z0-9][a-zA-Z0-9_.]*[^_.]${this.translatorEndKey}$`);
 		return valueToTranslation.match(patternIdentifier);
 	}
 
 	public hasMultipleIdentifiers(valueToTranslation: string) {
-		const patternIdentifier = new RegExp("(\\" + this.translatorBeginKey + ")([a-zA-Z0-9\\.]+)\\w+(\\" + this.translatorEndKey + ")", "g");
+		const patternIdentifier = new RegExp(`^${this.translatorBeginKey}[a-zA-Z0-9][a-zA-Z0-9_.]*[^_.]${this.translatorEndKey}$`);
 		if (valueToTranslation.match(patternIdentifier) &&
 			(valueToTranslation.match(patternIdentifier) as RegExpExecArray).length > 1) {
 			return true;
@@ -47,13 +47,13 @@ export class Ch5TranslationUtility {
 	}
 
 	public isTranslationIdentifier(value: string) {
-		const patternIdentifier = new RegExp("(\\" + this.translatorBeginKey + ")([a-zA-Z0-9\\.]+)\\w+(\\" + this.translatorEndKey + ")", "g");
+		const patternIdentifier = new RegExp(`^${this.translatorBeginKey}[a-zA-Z0-9][a-zA-Z0-9_.]*[^_.]${this.translatorEndKey}$`);
 		const pattern = patternIdentifier;
 		return pattern.test(value);
 	}
 
 	public stripDownTranslationCharacters(value: string) {
-		const pattern = new RegExp("^(\\" + this.translatorBeginKey + ")([a-zA-Z0-9\\.]+)(\\" + this.translatorEndKey + ")$",)
+		const pattern = new RegExp("^(\\" + this.translatorBeginKey + ")([a-zA-Z0-9\\._]+)(\\" + this.translatorEndKey + ")$",)
 		let translatedCharacters: string = '';
 		if (pattern.exec(value) && (pattern.exec(value) as RegExpExecArray).length > 0) {
 			translatedCharacters = (pattern.exec(value) as RegExpExecArray)[2] as string;
