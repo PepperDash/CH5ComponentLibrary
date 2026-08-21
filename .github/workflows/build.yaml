@@ -2,15 +2,50 @@ name: Build Mobile-Control-Core
 
 on: push
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: set up Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v7
         with:
-          node-version: 20.x
+          fetch-depth: 0
+          fetch-tags: true
+      - name: set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: compare upstream release baseline
+        run: |
+          git fetch --no-tags --depth=1 https://github.com/Crestron/CH5ComponentLibrary.git master:refs/remotes/upstream/master
+
+          local_latest_tag="$(git tag --list 'v*' --sort=-version:refname | head -n1)"
+          local_version="${local_latest_tag#v}"
+          upstream_version="$(node -p "JSON.parse(require('child_process').execSync('git show upstream/master:package.json', { encoding: 'utf8' })).version")"
+
+          if [ -n "$local_version" ] && [ "$(printf '%s\n%s\n' "$local_version" "$upstream_version" | sort -V | tail -n1)" = "$upstream_version" ] && [ "$local_version" != "$upstream_version" ]; then
+            {
+              echo "### Release version baseline"
+              echo ""
+              echo "- Latest local tag: ${local_latest_tag}"
+              echo "- Upstream package version: v${upstream_version}"
+              echo "- semantic-release will not automatically jump from ${local_latest_tag} to v${upstream_version}."
+              echo "- To align the next automated release with upstream, first create a one-time baseline tag/release at v${upstream_version} in this repository."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            {
+              echo "### Release version baseline"
+              echo ""
+              echo "- Latest local tag: ${local_latest_tag:-none}"
+              echo "- Upstream package version: v${upstream_version}"
+              echo "- Local release numbering is already aligned with or ahead of upstream."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: install packages
         run: npm ci
       - name: build
