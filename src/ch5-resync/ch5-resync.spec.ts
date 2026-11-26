@@ -244,6 +244,19 @@ describe('resynchronization (Csig.State_Synchronization)', () => {
             expect(() => vi.runAllTimers()).toThrow('Invalid resyncRequest object');
         });
 
+        it('a state that cannot be reset is logged and the others are still reset', () => {
+            const log = vi.spyOn(console, 'log').mockImplementation(() => undefined);
+            C.bridgeReceiveBooleanFromNative('good', true);
+            C.Ch5SignalFactory.getInstance().getStates().boolean.broken = {};
+            receiveSync(lib, 'StartOfUpdateRange', {
+                excludePrefixes: [],
+                range: range({ boolean: { stateNames: ['broken', 'good'], joinLow: 0, joinHigh: 0 } }),
+            });
+            receiveSync(lib, 'EndOfUpdate');
+            expect(log.mock.calls).toEqual([['[INFO] Failed to publish signal: broken of type: boolean']]);
+            expect(C.getState('b', 'good')).toBe(false);
+        });
+
         it('an unknown state name is ignored', () => {
             C.bridgeReceiveBooleanFromNative('a', true);
             receiveSync(lib, 'ClearAll', { excludePrefixes: [] });
@@ -254,7 +267,9 @@ describe('resynchronization (Csig.State_Synchronization)', () => {
     });
 
     describe('Ch5Resync.checkIfStateShouldBeIncluded', () => {
-        // Ch5Resync is not exported from the package, so it is reached through its own module
+        // Ch5Resync is not exported from the package, so it is reached through its own module.
+        // This only works because beforeEach already loaded the library: ch5-resync and ch5-core import
+        // each other, and loading ch5-resync first fails.
         it('excludes the synchronization state itself and the given prefixes', async () => {
             const { Ch5Resync } = await import('./ch5-resync');
             const prefixes = { excludePrefixes: ['Csig.', 'local.'] };
