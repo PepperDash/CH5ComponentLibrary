@@ -49,6 +49,10 @@ jobs:
           fi
       - name: install packages
         run: npm ci
+      - name: lint
+        run: npm run lint
+      - name: test
+        run: npm test
       - name: build
         run: npm run build
       - name: Deploy to npm

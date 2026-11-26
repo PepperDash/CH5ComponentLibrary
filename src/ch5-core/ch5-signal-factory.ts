@@ -36,8 +36,11 @@ export class Ch5SignalFactory {
     // Utility for testing purposes only
     public clearSignals(keepObjSignals: boolean) {
         if (this._signals) {
-            keepObjSignals ? this._signals = { 'boolean': {}, 'number': {}, 'string': {}, 'object': this._signals.object }
-                : this._signals = { 'boolean': {}, 'number': {}, 'string': {}, 'object': {} };
+            if (keepObjSignals) {
+                this._signals = { 'boolean': {}, 'number': {}, 'string': {}, 'object': this._signals.object };
+            } else {
+                this._signals = { 'boolean': {}, 'number': {}, 'string': {}, 'object': {} };
+            }
         }
     }
 

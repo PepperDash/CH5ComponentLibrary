@@ -27,7 +27,7 @@
     "scripts": {
         "build": "tsc && vite build",
         "test": "vitest run",
-        "lint": "tslint --project tsconfig.cjs.json",
+        "lint": "eslint . --ext .ts",
         "eslint": "eslint . --ext .ts"
     },
     "author": "Crestron - modified by PepperDash",
@@ -38,23 +38,16 @@
         "rxjs": "^7.3.0"
     },
     "devDependencies": {
-        "@types/chai": "^4.2.21",
         "@types/lodash": "^4.17.5",
-        "@types/mocha": "7.0.2",
         "@types/node": "^24.19.4",
         "@typescript-eslint/eslint-plugin": "^8.67.0",
         "@typescript-eslint/parser": "^8.67.0",
-        "chai": "^4.3.4",
         "eslint": "^8.49.0",
         "jsdom": "^29.1.1",
-        "mocha": "^11.8.0",
         "typescript": "^5.1.6",
         "vite": "^8.2.2",
         "vite-plugin-dts": "^3.9.1",
         "vitest": "^5.1.2"
-    },
-    "resolutions": {
-        "**/event-stream": "^4.0.1"
     },
     "files": [
         "LICENSE.txt",
