@@ -21,6 +21,6 @@ for a method/function
 * loadConfig(cfg) - Loads a new config (replaces the previous one)
 * enableAll() - Enables all keys. Will display all debug info available. (The debug info that uses Ch5Debug, the info 
 from ch5 components, and custom attributes will not be affected)
-* disablesAll() - Disables all keys
+* disableAll() - Disables all keys
 * setConfigKeyValue(key:string, value:boolean) - Changes the value of a key
 
