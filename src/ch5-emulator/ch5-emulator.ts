@@ -10,7 +10,12 @@ import { Ch5Signal, Ch5SignalBridge, Ch5SignalFactory } from "../ch5-core";
 import { TActionLogic, TSignalNonStandardTypeName, TSignalValue, TRepeatDigitalSignalValue } from "../ch5-core";
 import { Ch5SignalUpdateCallback } from '../ch5-core/types/callbacks';
 import { TCh5Signal } from '../ch5-core/types/signal.type';
-import { isNull, isUndefined, isBoolean, isString, isNumber, isObject } from 'lodash';
+import isNull from 'lodash/isNull';
+import isUndefined from 'lodash/isUndefined';
+import isBoolean from 'lodash/isBoolean';
+import isString from 'lodash/isString';
+import isNumber from 'lodash/isNumber';
+import isObject from 'lodash/isObject';
 
 export type TScenarioOnStart = {
     type: TSignalNonStandardTypeName;

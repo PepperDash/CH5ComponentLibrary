@@ -245,7 +245,7 @@ export class Ch5Resync {
                                 default:
                                     break;
                             }
-                        } catch (exception) {
+                        } catch {
                             console.log('[INFO] Failed to publish signal: ' + stateName + ' of type: ' + stateType);
                         }
                     }

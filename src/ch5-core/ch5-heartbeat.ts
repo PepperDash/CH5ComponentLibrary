@@ -5,7 +5,7 @@
 // Use of this source code is subject to the terms of the Crestron Software License Agreement
 // under which you licensed this source code.
 
-import { isNil } from "lodash";
+import isNil from "lodash/isNil";
 import { subscribeState } from "../ch5-core/utility-functions/subscribe-signal";
 import { publishEvent } from "../ch5-core/utility-functions/publish-signal";
 

@@ -17,7 +17,11 @@ export function countNumberOfCh5Components(parentElement: any) {
 		if (elementTagName.startsWith('CH5-')) {
 			found.total++;
 			const priorFoundForTagName: any = found[elementTagName];
-			priorFoundForTagName === undefined ? found[elementTagName] = 1 : found[elementTagName] = priorFoundForTagName + 1;
+			if (priorFoundForTagName === undefined) {
+				found[elementTagName] = 1;
+			} else {
+				found[elementTagName] = priorFoundForTagName + 1;
+			}
 		}
 		else { // not starts with 'ch5-'
 			if (element.hasAttributes()) {
@@ -28,9 +32,11 @@ export function countNumberOfCh5Components(parentElement: any) {
 						&& !attrName.endsWith('subs-key') && !attrName.endsWith('sub-key')) {
 						found.total++;
 						const priorFoundForAttrName = found[attrName];
-						priorFoundForAttrName === undefined ?
-							found[attrName] = 1 :
+						if (priorFoundForAttrName === undefined) {
+							found[attrName] = 1;
+						} else {
 							found[attrName] = priorFoundForAttrName + 1;
+						}
 					}
 				}
 			}

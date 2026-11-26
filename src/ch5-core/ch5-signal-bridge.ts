@@ -13,7 +13,7 @@ declare var webkit: ISigComSendWebkit;
 // eslint-disable-next-line no-var
 declare var CommunicationInterface: ISWebXPanel;
 
-import { isFunction } from 'lodash';
+import isFunction from 'lodash/isFunction';
 
 import { TSignalsSubscriptionsByType, TSignalStandardTypeName, TRepeatDigitalSignalValue } from './types/core';
 import { Ch5Debug } from "./ch5-debug";
