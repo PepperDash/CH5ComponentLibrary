@@ -13,7 +13,7 @@ import {
     Ch5SignalUpdateCallback,
     TAllSignalSubscriptionUpdateCallbacks
 } from "../types/callbacks";
-import { isNil } from 'lodash';
+import isNil from 'lodash/isNil';
 
 
 /**
