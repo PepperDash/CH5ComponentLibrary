@@ -9,12 +9,11 @@
  * Tests for the Ch5Uid class
  */
 
-import { expect } from 'chai';
-import { describe } from 'mocha';
+import { describe, expect, it } from 'vitest';
 import {Ch5Uid} from "./ch5-uid";
 
 describe('Ch5Uid', () => {
-    it('Multiple calls to getUid should return different ids', (done:MochaDone) => {
+    it('Multiple calls to getUid should return different ids', () => {
 
         const ids:string[] = [];
         let id = '';
@@ -25,6 +24,5 @@ describe('Ch5Uid', () => {
             ids.push(id);
         }
 
-        done();
     });
 });

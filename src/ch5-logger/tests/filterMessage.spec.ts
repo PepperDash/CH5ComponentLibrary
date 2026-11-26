@@ -5,8 +5,7 @@
 // Use of this source code is subject to the terms of the Crestron Software License Agreement
 // under which you licensed this source code.
 
-import { expect } from 'chai';
-import { describe } from 'mocha';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { TDataLog } from '../types';
 import { LogLevelEnum } from '../enums';
 import { LogMessagesFilter } from '../helpers/LogMessagesFilter';
